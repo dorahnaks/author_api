@@ -1,4 +1,6 @@
 from app.extensions import db
+from datetime import datetime
+
 class Book(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(20))
@@ -12,9 +14,8 @@ class Book(db.Model):
     publication_year = db.Column(db.String(50))
     genre = db.Column(db.String(50))
     specialisation = db.Column(db.String(50))
-    created_at = db.Column(db.String(20))
-    updated_at = db.Column(db.String(20))
-    
+    created_at = db.Column(db.DateTime,  default = datetime.now())
+    updated_at = db.Column(db.DateTime,  onupdate = datetime.now())
     
     def __init__(self, id, title, price, description, isbn, image, no_of_pages, price_unit, publication_year, genre, created_at, updated_at, specialisation):
         self.title = title
