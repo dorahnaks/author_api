@@ -1,4 +1,5 @@
 from flask import Flask # importing flask
+from app.extensions import db
 
 # Creating an apppliction factory function
 

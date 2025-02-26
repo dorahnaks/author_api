@@ -1,3 +1,4 @@
+from app.extensions import db
 class Book(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(20))
@@ -11,7 +12,19 @@ class Book(db.Model):
     publication_year = db.Column(db.String(50))
     genre = db.Column(db.String(50))
     specialisation = db.Column(db.String(50))
+    created_at = db.Column(db.String(20))
+    updated_at = db.Column(db.String(20))
     
     
-    def __init__(self, id, title, price, description, isbn, image, no_of_pages, price_unit, publication_year, genre, specialisation):
-        pass
+    def __init__(self, id, title, price, description, isbn, image, no_of_pages, price_unit, publication_year, genre, created_at, updated_at, specialisation):
+        self.title = title
+        self.price = price
+        self.description = description
+        self.isbn = isbn
+        self.image = image
+        self.no_of_pages = no_of_pages
+        self.price_unit = price_unit
+        self.publication_year = publication_year
+        self.genre = genre
+        self.created_at = created_at
+        self.updated_at = updated_at
