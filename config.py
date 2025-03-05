@@ -1,2 +1,3 @@
 class Config:
-    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:@localhost/flask_authors_db" # connection string
+    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:@localhost/authors_db" # connection string
+    JWT_SECRET_KEY = "authors" # secret key for jwt

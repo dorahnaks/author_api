@@ -15,6 +15,9 @@ class Book(db.Model):
     specialisation = db.Column(db.String(50))
     created_at = db.Column(db.DateTime,  default = datetime.now())
     updated_at = db.Column(db.DateTime,  onupdate = datetime.now())
+        
+
+    
     
     def __init__(self, id, title, price, description, isbn, image, no_of_pages, price_unit, publication_year, genre, created_at, updated_at, specialisation):
         self.title = title
